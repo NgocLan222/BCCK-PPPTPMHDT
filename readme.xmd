@@ -1,0 +1,21 @@
+# Hệ thống Cố vấn Học tập (Student Academic Advising System)
+
+Đồ án cuối kỳ môn **Phương pháp Phát triển Phần mềm Hướng đối tượng**  
+**Sinh viên thực hiện:** Cao Vũ Ngọc Lan  
+**Mã số sinh viên:** 1250080095  
+
+## 📖 Giới thiệu Dự án
+Hệ thống Cố vấn Học tập được xây dựng nhằm số hóa và tối ưu hóa quy trình quản lý học vụ, kết nối giữa sinh viên, giảng viên cố vấn và bộ phận quản trị. Hệ thống hỗ trợ theo dõi tiến độ học tập, cấu hình các quy tắc cảnh báo học vụ, quản lý tài khoản và hỗ trợ công tác tư vấn hướng nghiệp/học tập một cách minh bạch, hiệu quả.
+
+## 📂 Cấu trúc Thư mục
+```text
+1250080095_Cao Vũ Ngọc Lan/
+│
+├── HeThongCoVanHocTap/
+│   ├── frontend/        # Mã nguồn giao diện React
+│   └── backend/         # Mã nguồn API Node.js
+│
+├── EDU05.sql            # Script cơ sở dữ liệu SQL Server
+├── 1250080095.drawio    # Sơ đồ UML / Thiết kế hệ thống
+├── 1250080095.xlsx      # Tài liệu phân tích / Thống kê
+└── 1250080095_Cao Vũ Ngọc Lan.docx # Báo cáo đồ án chi tiết
