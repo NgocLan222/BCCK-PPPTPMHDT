@@ -1,0 +1,78 @@
+/* Thanh nhắc nhở đổi mật khẩu mặc định cho Sinh viên và Cố vấn */
+.password-banner {
+  max-width: 1020px;
+  margin: 20px auto 0 auto;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, var(--blush) 0%, var(--lavender) 100%);
+  border: 1px solid var(--rose);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.password-banner span {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #7F1D1D;
+}
+
+.btn-banner {
+  background-color: var(--white);
+  color: var(--text-main);
+  border: 1px solid var(--rose);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.btn-banner:hover {
+  background-color: var(--rose);
+}
+
+/* Cửa sổ popup đổi mật khẩu */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 41, 59, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.modal-box {
+  background-color: var(--white);
+  width: 100%;
+  max-width: 400px;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid var(--periwinkle);
+  box-shadow: 0 12px 30px rgba(30, 41, 59, 0.12);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--text-muted);
+  cursor: pointer;
+}

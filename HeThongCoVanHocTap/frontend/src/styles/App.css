@@ -1,0 +1,192 @@
+:root {
+  --rose: #FFCCCC;
+  --blush: #FFE6E6;
+  --lavender: #FAE6FA;
+  --white: #FFFFFF;
+  --periwinkle: #D6E0FF;
+  --ice-blue: #EBF0FF;
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Ghi đè mặc định của Vite để giao diện trải rộng toàn màn hình */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  background-color: var(--ice-blue);
+  color: var(--text-main);
+}
+
+/* Thanh điều hướng trên cùng */
+.navbar {
+  background: linear-gradient(90deg, var(--white) 0%, var(--lavender) 50%, var(--blush) 100%);
+  padding: 14px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--periwinkle);
+}
+
+.navbar-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.role-tag {
+  background-color: var(--periwinkle);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Khung nội dung và thẻ Card dùng chung */
+.container {
+  max-width: 1060px;
+  margin: 28px auto;
+  padding: 0 20px;
+}
+
+.page-header {
+  margin-bottom: 22px;
+}
+
+.page-header h2 {
+  margin: 0 0 4px 0;
+  font-size: 22px;
+}
+
+.page-header p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.card {
+  background-color: var(--white);
+  padding: 22px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--periwinkle);
+  box-shadow: 0 4px 16px rgba(30, 41, 59, 0.03);
+  margin-bottom: 22px;
+}
+
+.card h3 {
+  margin: 0 0 14px 0;
+  font-size: 16px;
+}
+
+/* Form và nút bấm dùng chung */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--periwinkle);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: var(--white);
+  color: var(--text-main);
+  outline: none;
+  transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--rose);
+  background-color: var(--blush);
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: var(--periwinkle);
+  color: var(--text-main);
+  border: 1px solid #B8C9FF;
+  padding: 11px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--rose);
+  border-color: #F5A8A8;
+}
+
+.btn-logout {
+  background-color: var(--blush);
+  color: #991B1B;
+  border: 1px solid var(--rose);
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-logout:hover {
+  background-color: var(--rose);
+}
+
+/* Bảng dữ liệu và nhãn trạng thái */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid var(--ice-blue);
+}
+
+th {
+  background-color: var(--ice-blue);
+  font-weight: 600;
+}
+
+tr:hover td {
+  background-color: #FAF9FF;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-danger { background-color: var(--rose); color: #7F1D1D; }
+.badge-warning { background-color: var(--blush); color: #9A3412; border: 1px solid var(--rose); }
+.badge-info { background-color: var(--lavender); color: #581C87; }
+.badge-success { background-color: var(--periwinkle); color: #1E3A8A; }

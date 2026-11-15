@@ -1,0 +1,485 @@
+/* ===================================================================== */
+/* KHUNG CHUNG & THANH TAB BO TRÒN HIỆN ĐẠI CỐ VẤN HỌC TẬP               */
+/* ===================================================================== */
+.cv-tabs-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--white);
+  border: 1px solid var(--periwinkle);
+  border-radius: 14px;
+  padding: 6px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 10px rgba(30, 41, 59, 0.03);
+}
+
+.cv-pill-tab {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-main);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.cv-pill-tab:hover {
+  background-color: var(--ice-blue);
+}
+
+.cv-pill-tab.active {
+  background-color: var(--lavender);
+  border-color: #D8B4FE;
+  color: var(--text-main);
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(30, 41, 59, 0.06);
+}
+
+.cv-tab-count {
+  background-color: var(--ice-blue);
+  color: var(--text-main);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.cv-tab-badge {
+  background-color: var(--rose);
+  color: #991B1B;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* Thanh phân trang 5 dòng/trang cho Cố vấn */
+.cv-pagination-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--periwinkle);
+}
+
+.cv-page-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--periwinkle);
+  background-color: var(--white);
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cv-page-btn:hover:not(:disabled) {
+  background-color: var(--lavender);
+}
+
+.cv-page-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cv-page-info {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.cv-header-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.cv-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.cv-stat-card {
+  background-color: var(--white);
+  border: 1px solid var(--periwinkle);
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.cv-stat-card span {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cv-stat-card strong {
+  font-size: 20px;
+  color: var(--text-main);
+}
+
+/* Tiện ích chung */
+.no-margin-bottom { margin-bottom: 0; }
+.no-margin-left { margin-left: 0 !important; }
+.flex-1 { flex: 1; }
+.empty-text { color: var(--text-muted); margin: 0; }
+.processed-text { font-size: 12.5px; color: var(--text-muted); font-weight: 600; }
+.action-btn-pair { display: flex; gap: 6px; }
+.submit-fixed-btn { max-width: 260px; }
+
+/* Thanh tiến độ (Progress bar) */
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background-color: var(--ice-blue);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--periwinkle);
+  margin: 6px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--periwinkle) 0%, var(--lavender) 100%);
+  transition: width 0.3s ease;
+}
+
+/* Modal nền chung */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 41, 59, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal-card {
+  background-color: var(--white);
+  border: 1px solid var(--periwinkle);
+  border-radius: 16px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(30, 41, 59, 0.15);
+}
+
+.modal-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-header-row h3 { margin: 0; }
+.modal-subtitle { margin: 4px 0 0 0; font-size: 13px; color: var(--text-muted); }
+
+/* ===================================================================== */
+/* TAB 1: DANH SÁCH SINH VIÊN & MODAL HỒ SƠ NĂNG LỰC                     */
+/* ===================================================================== */
+.sv-list-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  gap: 10px;
+}
+
+.sv-list-header h3 { margin: 0; }
+
+.profile-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.profile-modal-header h3 { margin: 0; }
+
+.profile-modal-sub {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.profile-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.profile-kpi-box {
+  background-color: var(--ice-blue);
+  border: 1px solid var(--periwinkle);
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.profile-kpi-box span {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.profile-kpi-box strong { font-size: 18px; }
+.profile-table { margin-bottom: 16px; }
+.profile-lo-item { margin-bottom: 10px; }
+
+.profile-lo-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+}
+
+/* ===================================================================== */
+/* TAB 2: PHÊ DUYỆT MINH CHỨNG NĂNG LỰC                                  */
+/* ===================================================================== */
+.sv-cell-name { font-weight: 600; }
+.sv-cell-id { font-size: 12.5px; color: var(--text-muted); }
+.cert-title { font-weight: 600; margin-bottom: 4px; }
+.badge-compact { font-size: 11.5px; padding: 2px 8px; }
+.nowrap-btn { white-space: nowrap; }
+.advisor-note-cell { font-size: 13px; color: var(--text-muted); max-width: 220px; }
+
+.decision-modal-card { max-width: 480px; }
+.decision-info { font-size: 13.5px; color: var(--text-muted); margin-top: 0; }
+.sample-reasons-wrap { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.sample-reason-btn { font-size: 12px; }
+.full-submit-btn { width: 100%; padding: 10px; margin-left: 0; }
+
+/* ===================================================================== */
+/* TAB 3: TRÍCH XUẤT BẰNG CHỨNG & BAN HÀNH CẢNH BÁO                      */
+/* ===================================================================== */
+.evidence-extract-box {
+  background-color: var(--ice-blue);
+  border: 1px solid var(--periwinkle);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.evidence-extract-title { margin-top: 0; margin-bottom: 10px; }
+
+.evidence-item {
+  background-color: var(--white);
+  border-left: 4px solid #93A8F4;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+}
+
+.evidence-table-list { margin: 0; padding-left: 16px; font-size: 13px; }
+
+/* ===================================================================== */
+/* TAB 4: XÉT DUYỆT PHẢN HỒI THEO TỪNG MỤC VI PHẠM                      */
+/* ===================================================================== */
+.review-card {
+  background-color: var(--ice-blue);
+  border: 1px solid var(--periwinkle);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.feedback-text { margin: 6px 0; font-size: 13.5px; }
+.feedback-file-row { margin: 6px 0 12px 0; font-size: 13px; }
+
+.evidence-decision-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.evidence-decision-row {
+  background-color: var(--white);
+  border: 1px solid var(--periwinkle);
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.evidence-decision-text {
+  flex: 1;
+  min-width: 240px;
+  font-size: 13px;
+}
+
+.forward-hp-btn {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.advisor-summary-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--periwinkle);
+}
+
+/* ===================================================================== */
+/* TAB 5: LẬP & NGHIỆM THU KẾ HOẠCH CAN THIỆP                            */
+/* ===================================================================== */
+.goal-input { flex: 1; min-width: 250px; }
+.credit-cap-input { width: 110px; }
+
+.task-builder-section { margin-bottom: 12px; }
+.task-builder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.task-builder-header strong { font-size: 13.5px; }
+.task-builder-row { margin-bottom: 8px; padding: 10px; }
+
+.review-card-meta {
+  margin: 4px 0;
+  font-size: 13.5px;
+}
+
+.review-card-progress {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.advisor-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.advisor-task-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  border: 1px solid var(--periwinkle);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.advisor-task-row.locked {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.advisor-task-row input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task-done-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task-deadline {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.review-card-actions {
+  margin-top: 12px;
+}
+
+.eval-note-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--periwinkle);
+  margin-bottom: 10px;
+}
+
+.eval-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.eval-btn-group button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.eval-hint {
+  margin: 6px 0 0 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.review-card-result {
+  margin: 8px 0 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ===================================================================== */
+/* MODAL XEM TRƯỚC ẢNH / PDF MINH CHỨNG                                  */
+/* ===================================================================== */
+.preview-modal-card { max-width: 720px; }
+
+.preview-box {
+  background-color: var(--ice-blue);
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid var(--periwinkle);
+}
+
+.preview-img { max-width: 100%; max-height: 62vh; border-radius: 8px; }
+.preview-pdf { width: 100%; height: 62vh; border: none; border-radius: 8px; }
+.preview-placeholder { padding: 30px 16px; }
+.preview-placeholder-title { margin: 0 0 8px 0; font-weight: 600; }
+.preview-placeholder-desc { margin: 0; font-size: 13px; color: var(--text-muted); }
+
+/* ===================================================================== */
+/* RESPONSIVE KHI THU NHỎ HOẶC ZOOM TRÌNH DUYỆT                          */
+/* ===================================================================== */
+@media (max-width: 900px) {
+  .cv-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .cv-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
